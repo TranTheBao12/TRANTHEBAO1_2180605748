@@ -7,7 +7,7 @@
 <h1>Quan Ly Ban Hang</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Them Mat Hang</a>
 </p>
 <table class="table">
     <thead>
@@ -23,6 +23,7 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.ImageUrl)
+           
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.category)
@@ -43,7 +44,8 @@
                 @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.ImageUrl)
+                    <img src="@Html.DisplayFor(modelItem => item.ImageUrl)" width="100px" />
+         
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.category.Name)

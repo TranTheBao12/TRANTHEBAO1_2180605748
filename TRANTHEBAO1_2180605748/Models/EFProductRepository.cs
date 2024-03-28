@@ -11,7 +11,7 @@ namespace TRANTHEBAO1_2180605748.Models
         }
         public async Task<IEnumerable<Product>> GetAllAsync()
         {
-            return await _context.Products.ToListAsync();
+            return await _context.Products.Include(x=>x.category).ToListAsync();
         }
         public async Task<Product> GetByIdAsync(int id)
         {
