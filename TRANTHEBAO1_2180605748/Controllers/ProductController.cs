@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Concurrent;
 using TRANTHEBAO1_2180605748.Models;
 
@@ -109,7 +110,7 @@ ICategoryRepository categoryRepository)
             product.CategoryId);
             return View(product);
         }
-   
+
         [HttpPost]
         public async Task<IActionResult> Delete(int id, Product product)
         {
@@ -117,12 +118,15 @@ ICategoryRepository categoryRepository)
             {
                 return NotFound();
             }
-            
-                await _productRepository.DeleteAsync(id);
-                return RedirectToAction(nameof(Index));
 
-            
+            await _productRepository.DeleteAsync(id);
+            return RedirectToAction(nameof(Index));
+
+
 
         }
+
+
     }
+
 }

@@ -1,4 +1,6 @@
-﻿namespace TRANTHEBAO1_2180605748.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace TRANTHEBAO1_2180605748.Models
 {
     public class Product
     {
@@ -7,8 +9,10 @@
         public decimal Price { get; set; }
         public string Description { get; set; } 
         public string? ImageUrl { get; set; }
-        public List<ProductImage>? Images { get; set; }
+        public List<ProductImage>? Images { get; set; } 
         public int CategoryId {  get; set; }
         public Category? category { get; set; }
+ 
+  
     }
 }
